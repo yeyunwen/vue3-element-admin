@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import { useUserStore } from "@/store/modules/user";
-import { login } from "@/api/user";
 
 const userStore = useUserStore();
 
@@ -11,12 +10,8 @@ const loginData = ref({
   password: "111111",
 });
 
-userStore.username = 123;
-
 function handleLogin() {
-  login().then((res) => {
-    console.log(res);
-  });
+  userStore.login(loginData.value).then(() => userStore.getInfo());
 }
 </script>
 
