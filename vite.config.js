@@ -30,7 +30,7 @@ export default defineConfig(({ mode }) => {
           rewrite: (path) =>
             path.replace(
               new RegExp("^" + env.VITE_APP_BASE_API),
-              emv.VITE_APP_TARGET_BASE_API
+              env.VITE_APP_TARGET_BASE_API
             ),
         },
       },
