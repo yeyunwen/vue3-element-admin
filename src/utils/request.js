@@ -3,7 +3,7 @@ import { ElMessage } from "element-plus";
 import { useUserStoreHook } from "@/store/modules/user";
 
 const service = axios.create({
-  baseURL: "/api", // 存在硬编码 强耦合
+  baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 50000,
 });
 
