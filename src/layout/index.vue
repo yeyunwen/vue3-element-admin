@@ -1,0 +1,21 @@
+<script setup>
+import { Sidebar } from "./components"
+console.log(Sidebar);
+    
+</script>
+<script>
+    export default {
+        name: 'Layout'
+    }
+</script>
+    
+<template>
+    <div class="app-wrapper">
+        <Sidebar></Sidebar>
+        <router-view></router-view>
+    </div>
+</template>
+    
+<style lang="sass">
+    
+</style>
