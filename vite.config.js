@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       AutoImport({
+        imports: ["vue"],
+        // 第三方组件库的解析器
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
           ElementPlusResolver(),
