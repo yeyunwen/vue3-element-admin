@@ -1,16 +1,12 @@
-<script setup>
-    
-</script>
+<script setup></script>
 <script>
 export default {
-    name: 'Dashboard'
-}
+  name: "Dashboard",
+};
 </script>
-    
+
 <template>
-    <div>dashboard</div>
+  <div>dashboard</div>
 </template>
-    
-<style lang="scss">
-    
-</style>
+
+<style lang="scss"></style>

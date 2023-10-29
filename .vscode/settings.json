@@ -2,6 +2,10 @@
   "editor.tabSize": 2,
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定 prettier 为所有文件默认格式化器
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

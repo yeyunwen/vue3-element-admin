@@ -19,23 +19,14 @@ function handleLogin() {
     <div class="login-form">
       <el-form ref="loginForm" :model="loginData">
         <el-form-item>
-          <el-input
-            v-model="loginData.username"
-            :prefix-icon="UserFilled"
-          ></el-input>
+          <el-input v-model="loginData.username" :prefix-icon="UserFilled" />
         </el-form-item>
 
         <el-form-item>
-          <el-input
-            v-model="loginData.password"
-            :prefix-icon="Lock"
-            show-password
-          ></el-input>
+          <el-input v-model="loginData.password" :prefix-icon="Lock" show-password />
         </el-form-item>
       </el-form>
-      <el-button class="login-btn" type="primary" @click="handleLogin"
-        >登录</el-button
-      >
+      <el-button class="login-btn" type="primary" @click="handleLogin">登录</el-button>
     </div>
   </div>
 </template>

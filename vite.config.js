@@ -64,11 +64,7 @@ export default defineConfig(({ mode }) => {
           // 来自webpack的devServer > proxy > changeOrigin 解释
           changeOrigin: true,
           // 路径重新，可能后端接口路径并没有 env.VITE_APP_BASE_API
-          rewrite: (path) =>
-            path.replace(
-              new RegExp("^" + env.VITE_APP_BASE_API),
-              env.VITE_APP_TARGET_BASE_API
-            ),
+          rewrite: (path) => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), env.VITE_APP_TARGET_BASE_API),
         },
       },
     },
