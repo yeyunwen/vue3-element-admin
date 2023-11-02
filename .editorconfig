@@ -1,0 +1,12 @@
+# 指示当前EditorConfig文件为项目的根文件，停止在父目录中查找其他EditorConfig文件
+root = true 
+
+# 适用于所有文件的通用配置部分
+[*]
+# 指定字符集为UTF-8编码。
+charset = utf-8
+# 指定换行符为crlf windows风格
+# windows：CRLF（表示句尾使用回车换行两个字符，即windows下的"\r\n"换行）
+# Linux：LF（表示句尾，只使用换行,即末尾是"\n"）
+# mac：CR（表示只使用回车，即末尾是"\r"）
+end_of_line = crlf

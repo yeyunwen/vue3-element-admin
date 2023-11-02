@@ -33,4 +33,6 @@ module.exports = {
   useTabs: false,
   // vue 文件中是否缩进 <style> 和 <script> 标签，默认 false
   vueIndentScriptAndStyle: false,
+  // 根据当前文件中已经存在的换行符类型来决定使用何种换行符。换行符类型可以是LF（\n）或CRLF（\r\n）。Prettier会检测文件中的第一个换行符，并尝试保持文件中已有的换行符类型一致。
+  endOfLine: "auto",
 };
