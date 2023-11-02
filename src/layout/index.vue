@@ -15,4 +15,4 @@ export default {
   </div>
 </template>
 
-<style lang="sass"></style>
+<!-- <style lang="scss"></style> -->

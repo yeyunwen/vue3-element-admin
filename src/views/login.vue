@@ -35,6 +35,7 @@ function handleLogin() {
 $bg: #283443;
 $light_gray: #fff;
 $cursor: #fff;
+
 .login-container {
   .el-input {
     height: 45px;
@@ -46,14 +47,16 @@ $cursor: #fff;
 $bg: #283443;
 
 .login-container {
-  min-height: 100%;
-  width: 100%;
-  background-color: $bg;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: $bg;
+
   .login-form {
     width: 400px;
+
     .login-btn {
       width: 100%;
     }
