@@ -1,5 +1,4 @@
-import axios from "axios";
-import { ElMessage } from "element-plus";
+import axios, { InternalAxiosRequestConfig, AxiosResponse } from "axios";
 import { useUserStoreHook } from "@/store/modules/user";
 
 const service = axios.create({
@@ -8,7 +7,7 @@ const service = axios.create({
 });
 
 service.interceptors.request.use(
-  (config) => {
+  (config: InternalAxiosRequestConfig) => {
     const userStore = useUserStoreHook();
     if (userStore.token) {
       config.headers.Authorization = userStore.token;
@@ -23,7 +22,7 @@ service.interceptors.request.use(
 );
 
 service.interceptors.response.use(
-  (response) => {
+  (response: AxiosResponse) => {
     const { code, msg } = response.data;
     if (code === 200) {
       return response.data;

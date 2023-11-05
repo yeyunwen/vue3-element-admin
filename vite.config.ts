@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig, loadEnv, ConfigEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 import AutoImport from "unplugin-auto-import/vite";
@@ -11,7 +11,7 @@ import IconsResolver from "unplugin-icons/resolver";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode }: ConfigEnv) => {
   // 获得当前env对象 如 .env.development 文件中的内容
   const env = loadEnv(mode, process.cwd());
 

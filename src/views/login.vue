@@ -1,10 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import { useUserStore } from "@/store/modules/user";
+import { LoginData } from "@/api/user/types";
 
 const userStore = useUserStore();
 
-const loginData = ref({
+const loginData = ref<LoginData>({
   username: "admin",
   password: "111111",
 });

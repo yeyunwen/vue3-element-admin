@@ -1,5 +1,5 @@
 <script setup>
-import { Sidebar } from "./components";
+import { Sidebar } from "./components/index";
 console.log(Sidebar);
 </script>
 <script>

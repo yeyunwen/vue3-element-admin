@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 /* Layout */
 import Layout from "@/layout/index.vue";
 
-const constantRoutes = [
+const constantRoutes: RouteRecordRaw[] = [
   {
     name: "login",
     path: "/login",
