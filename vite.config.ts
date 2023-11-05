@@ -30,6 +30,12 @@ export default defineConfig(({ mode }) => {
           }),
         ],
         dts: false,
+        // dts: "src/types/auto-imports.d.ts",
+        eslintrc: {
+          enabled: false,
+          filepath: "./.eslintrc-auto-import.json",
+          globalsPropValue: true,
+        },
       }),
       Components({
         resolvers: [
@@ -40,7 +46,9 @@ export default defineConfig(({ mode }) => {
             enabledCollections: ["ep"], // @iconify-json/ep 是 Element Plus 的图标库
           }),
         ],
+        dirs: ["src/**/components"],
         dts: false,
+        // dts: "src/types/components.d.ts",
       }),
       Icons({
         autoInstall: true,
