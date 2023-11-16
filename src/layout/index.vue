@@ -1,11 +1,10 @@
 <script setup>
 import { Sidebar } from "./components/index";
-console.log(Sidebar);
-</script>
-<script>
-export default {
+defineOptions({
   name: "Layout",
-};
+  inheritAttrs: false,
+});
+console.log(Sidebar);
 </script>
 
 <template>

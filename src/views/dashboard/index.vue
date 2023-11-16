@@ -1,8 +1,8 @@
-<script setup></script>
-<script>
-export default {
+<script setup lang="ts">
+defineOptions({
   name: "Dashboard",
-};
+  inheritAttrs: false,
+});
 </script>
 
 <template>

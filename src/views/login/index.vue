@@ -12,6 +12,11 @@ import { LoginData } from "@/api/user/types";
 import { FormInstance, FormRules } from "element-plus";
 import { LocationQuery, LocationQueryValue, useRoute } from "vue-router";
 
+defineOptions({
+  name: "Login",
+  inheritAttrs: false,
+});
+
 const userStore = useUserStore();
 const route = useRoute();
 

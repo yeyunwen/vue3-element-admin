@@ -1,9 +1,8 @@
-<script setup lang="ts"></script>
-
-<script>
-export default {
+<script setup lang="ts">
+defineOptions({
   name: "Sidebar",
-};
+  inheritAttrs: false,
+});
 </script>
 
 <template>
