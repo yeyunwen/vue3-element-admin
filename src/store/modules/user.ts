@@ -1,12 +1,16 @@
 import { defineStore } from "pinia";
 import { store } from "@/store";
+import { resetRouter } from "@/router";
 import { loginApi, getUserInfo } from "@/api/user";
+import { useStorage } from "@vueuse/core";
 
 import { LoginData, UserInfo } from "@/api/user/types";
 
 export const useUserStore = defineStore("user", () => {
-  const token = ref("");
-  const user = ref({});
+  const token = useStorage("token", "");
+  const user = ref<UserInfo>({
+    roles: [],
+  });
 
   function login(loginData: LoginData) {
     return new Promise<void>((resolve, reject) => {
@@ -34,11 +38,20 @@ export const useUserStore = defineStore("user", () => {
     });
   }
 
+  function resetToken() {
+    return new Promise<void>((reslove) => {
+      token.value = "";
+      resetRouter();
+      reslove();
+    });
+  }
+
   return {
     token,
     user,
     login,
     getInfo,
+    resetToken,
   };
 });
 

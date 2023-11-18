@@ -19,11 +19,11 @@ export interface UserInfo {
   /**
    * 用户名
    */
-  name: string;
+  name?: string;
   /**
    * 简介
    */
-  introduction: string;
+  introduction?: string;
   /**
    * 头像
    */
