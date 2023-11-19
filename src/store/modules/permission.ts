@@ -49,7 +49,13 @@ export const usePermissionStore = defineStore("permission", () => {
 
   function generateRoutes(roles: string[]) {
     return new Promise<RouteRecordRaw[]>((resolve) => {
-      const accessedRoutes = filterAsyncRoutes(roles, asyncRoutes);
+      let accessedRoutes = [];
+      if (roles.includes("admin")) {
+        accessedRoutes = asyncRoutes;
+      } else {
+        accessedRoutes = filterAsyncRoutes(roles, asyncRoutes);
+      }
+
       setRoutes(accessedRoutes);
       resolve(accessedRoutes);
     });
