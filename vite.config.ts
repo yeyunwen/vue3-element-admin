@@ -59,6 +59,13 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "@/styles/variables.scss";`,
+        },
+      },
+    },
     // 在开发环境下提供一个服务
     server: {
       // 开启服务时自动在浏览器打开
