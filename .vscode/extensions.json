@@ -2,8 +2,9 @@
   "recommendations": [
     "vue.volar",
     "vue.vscode-typescript-vue-plugin",
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "esbenp.prettier-vscode"
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint"
   ]
 }
