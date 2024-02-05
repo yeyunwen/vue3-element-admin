@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client", "unplugin-vue-define-options/macros-global"],
+    "types": ["vite/client"],
     "allowSyntheticDefaultImports": true /* 允许默认导入 */
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "src/types/**/*.d.ts", "vite.config.ts"],
