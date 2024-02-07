@@ -1,3 +1,5 @@
+@use "./variables.scss" as *;
+
 #app {
   .sidebar-container {
     width: $sideBarWidth !important;
