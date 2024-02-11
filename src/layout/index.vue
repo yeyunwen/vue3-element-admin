@@ -9,8 +9,10 @@ console.log(Sidebar);
 
 <template>
   <div class="app-wrapper">
-    <Sidebar />
-    <router-view />
+    <Sidebar class="sidebar-container" />
+    <div class="main-container">
+      <router-view />
+    </div>
   </div>
 </template>
 

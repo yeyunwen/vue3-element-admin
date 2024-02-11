@@ -1,0 +1,7 @@
+@use "./variables" as *;
+
+:export {
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+}

@@ -1,0 +1,5 @@
+@use "./variables" as *;
+
+.main-container {
+  margin-left: $sideBarWidth;
+}

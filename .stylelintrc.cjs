@@ -27,5 +27,9 @@ module.exports = {
         ignorePseudoClasses: ["global", "export", "v-deep", "deep"],
       },
     ],
+    "selector-class-pattern": null, // 选择器类名命名规则
+    "no-duplicate-selectors": null, // 允许无降序特异性
+    "no-descending-specificity": null,
+    "property-no-unknown": [true, { ignoreProperties: ["menuBg", "menuText", "menuActiveText"] }],
   },
 };

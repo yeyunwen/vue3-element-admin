@@ -11,5 +11,13 @@ declare module "vue-router" {
      * 用户角色列表
      */
     roles?: string[];
+    /**
+     * 活动页面
+     */
+    activeMenu?: string;
+    /**
+     * 是否隐藏
+     */
+    hidden?: boolean;
   }
 }
