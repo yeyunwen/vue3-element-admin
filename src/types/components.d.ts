@@ -15,9 +15,13 @@ declare module "vue" {
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElMenuItemGroup: (typeof import("element-plus/es"))["ElMenuItemGroup"];
+    ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
+    Item: (typeof import("./../layout/components/Sidebar/Item.vue"))["default"];
+    Link: (typeof import("./../layout/components/Sidebar/Link.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
     Sidebar: (typeof import("./../layout/components/Sidebar/index.vue"))["default"];
+    SidebarItem: (typeof import("./../layout/components/Sidebar/SidebarItem.vue"))["default"];
   }
 }
