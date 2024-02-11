@@ -9,4 +9,4 @@ charset = utf-8
 # windows：CRLF（表示句尾使用回车换行两个字符，即windows下的"\r\n"换行）
 # Linux：LF（表示句尾，只使用换行,即末尾是"\n"）
 # mac：CR（表示只使用回车，即末尾是"\r"）
-end_of_line = crlf
+end_of_line = lf
