@@ -12,6 +12,10 @@
     background-color: $menuBg;
   }
 
+  .svg-icon {
+    margin-right: 12px;
+  }
+
   .el-menu-item {
     &:hover {
       background-color: $menuHover;

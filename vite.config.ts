@@ -8,8 +8,11 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 
-import path from "path";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
+import { resolve } from "path";
+
+const pathSrc = resolve(__dirname, "src");
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   // 获得当前env对象 如 .env.development 文件中的内容
@@ -24,10 +27,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
           ElementPlusResolver(),
-          // 自动导入图标组件
-          IconsResolver({
-            prefix: "Icon",
-          }),
+          IconsResolver({}),
         ],
         dts: false,
         // dts: "src/types/auto-imports.d.ts",
@@ -46,17 +46,23 @@ export default defineConfig(({ mode }: ConfigEnv) => {
             enabledCollections: ["ep"], // @iconify-json/ep 是 Element Plus 的图标库
           }),
         ],
-        dirs: ["src/**/components"],
+        dirs: ["src/components", "src/**/components"],
         dts: false,
         // dts: "src/types/components.d.ts",
       }),
       Icons({
         autoInstall: true,
       }),
+      createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [resolve(pathSrc, "assets/icons")],
+        // 指定symbolId格式
+        symbolId: "icon-[dir]-[name]",
+      }),
     ],
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        "@": resolve(__dirname, "./src"),
       },
     },
     // 在开发环境下提供一个服务

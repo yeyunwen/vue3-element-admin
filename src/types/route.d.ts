@@ -19,5 +19,9 @@ declare module "vue-router" {
      * 是否隐藏
      */
     hidden?: boolean;
+    /**
+     * 图标
+     */
+    icon?: string;
   }
 }

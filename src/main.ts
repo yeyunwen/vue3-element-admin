@@ -8,6 +8,9 @@ import "@/permission";
 import "normalize.css";
 import "@/styles/index.scss";
 
+// 本地SVG图标
+import "virtual:svg-icons-register";
+
 const app = createApp(App);
 
 setUpStore(app);

@@ -57,14 +57,14 @@ const resolvePath = (routePath: string) => {
     <template v-if="hasOneShowingChild(item.children, item as RouteRecordRaw)">
       <AppLink :to="resolvePath(onlyOneChild!.path)">
         <el-menu-item :index="resolvePath(onlyOneChild!.path)">
-          <Item :title="onlyOneChild?.meta?.title" />
+          <Item v-if="onlyOneChild!.meta" :icon="onlyOneChild!.meta?.icon" :title="onlyOneChild!.meta?.title" />
         </el-menu-item>
       </AppLink>
     </template>
 
     <el-sub-menu v-else :index="resolvePath(item.path)">
       <template #title>
-        <Item v-if="item.meta" :title="item.meta.title" />
+        <Item v-if="item.meta" :icon="onlyOneChild?.meta?.icon" :title="item.meta.title" />
       </template>
 
       <SidebarItem v-for="child in item.children" :key="child.path" :item="child" :basePath="resolvePath(child.path)" />

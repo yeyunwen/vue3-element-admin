@@ -11,6 +11,9 @@ console.log(Sidebar);
   <div class="app-wrapper">
     <Sidebar class="sidebar-container" />
     <div class="main-container">
+      <div>
+        <Navbar />
+      </div>
       <router-view />
     </div>
   </div>
