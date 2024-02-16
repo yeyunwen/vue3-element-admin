@@ -2,7 +2,6 @@
 import path from "path-browserify";
 import type { RouteRecordRaw } from "vue-router";
 import AppLink from "./Link.vue";
-import Item from "./Item.vue";
 import { isExternal } from "@/utils/validate";
 
 const props = defineProps({
@@ -32,7 +31,7 @@ const hasOneShowingChild = (children: RouteRecordRaw[] = [], parent: RouteRecord
     return true;
   }
   if (showingChildren.length === 0) {
-    onlyOneChild.value = { ...parent, path: "" };
+    onlyOneChild.value = { ...parent, path: "" }; // path 设为 "" 方便下次递归
     return true;
   }
   return false;
@@ -45,29 +44,34 @@ const resolvePath = (routePath: string) => {
   if (isExternal(props.basePath)) {
     return props.basePath;
   }
-  console.log(props.basePath, routePath);
-
-  console.log(path.resolve(props.basePath, routePath));
 
   return path.resolve(props.basePath, routePath);
 };
 </script>
 <template>
-  <div v-if="!item.meta?.hidden">
+  <template v-if="!item.meta?.hidden">
     <template v-if="hasOneShowingChild(item.children, item as RouteRecordRaw)">
       <AppLink :to="resolvePath(onlyOneChild!.path)">
         <el-menu-item :index="resolvePath(onlyOneChild!.path)">
-          <Item v-if="onlyOneChild!.meta" :icon="onlyOneChild!.meta?.icon" :title="onlyOneChild!.meta?.title" />
+          <el-icon>
+            <SvgIcon v-if="onlyOneChild!.meta" :icon-class="onlyOneChild!.meta?.icon" />
+          </el-icon>
+          <template v-if="onlyOneChild" #title>
+            <span>{{ onlyOneChild.meta?.title }}</span>
+          </template>
         </el-menu-item>
       </AppLink>
     </template>
 
     <el-sub-menu v-else :index="resolvePath(item.path)">
-      <template #title>
-        <Item v-if="item.meta" :icon="onlyOneChild?.meta?.icon" :title="item.meta.title" />
+      <template v-if="item.meta" #title>
+        <el-icon>
+          <SvgIcon v-if="item.meta.icon" :icon-class="item.meta.icon" />
+        </el-icon>
+        <span v-if="item.meta.title">{{ item.meta.title }}</span>
       </template>
 
       <SidebarItem v-for="child in item.children" :key="child.path" :item="child" :basePath="resolvePath(child.path)" />
     </el-sub-menu>
-  </div>
+  </template>
 </template>

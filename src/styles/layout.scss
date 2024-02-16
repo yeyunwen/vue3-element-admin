@@ -1,0 +1,60 @@
+@use "./variables" as *;
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  width: $sideBarWidth !important;
+  height: 100%;
+  background-color: $menuBg;
+  transition: width 0.28s;
+
+  .el-menu {
+    border: none;
+  }
+
+  .el-menu-item {
+    &:hover {
+      background-color: $menuHover;
+    }
+  }
+
+  .el-sub-menu__title {
+    &:hover {
+      background-color: $menuHover;
+    }
+  }
+
+  .el-sub-menu {
+    &.is-active {
+      > .el-sub-menu__title {
+        color: $subMenuActiveText;
+      }
+    }
+
+    .el-menu-item {
+      background-color: $subMenuBg;
+
+      &:hover {
+        background-color: $subMenuHover;
+      }
+    }
+  }
+}
+
+.main-container {
+  position: relative;
+  margin-left: $sideBarWidth;
+}
+
+.hideSidebar {
+  .sidebar-container {
+    width: $sideBarHideWidth !important;
+  }
+
+  .main-container {
+    margin-left: $sideBarHideWidth;
+  }
+}

@@ -64,6 +64,7 @@ const constantRoutes: RouteRecordRaw[] = [
     meta: {
       title: "Permission",
       roles: ["admin", "editor"], // you can set roles in root nav
+      icon: "system",
     },
     children: [
       {

@@ -22,3 +22,4 @@ $subMenuActiveText: var(--sub-menu-active-text);
 $subMenuHover: var(--sub-menu-hover);
 
 $sideBarWidth: 210px;
+$sideBarHideWidth: calc(var(--el-menu-icon-width) + var(--el-menu-base-level-padding) * 2); // 来自.el-menu--collapse
