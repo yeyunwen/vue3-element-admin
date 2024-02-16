@@ -81,6 +81,10 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           rewrite: (path) => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), env.VITE_APP_TARGET_BASE_API),
         },
       },
+      // 预热常用文件，提高初始页面加载速度
+      warmup: {
+        clientFiles: ["./src/layout/**/*.vue"],
+      },
     },
   };
 });
