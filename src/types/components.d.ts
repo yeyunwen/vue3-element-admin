@@ -11,6 +11,10 @@ declare module "vue" {
     ElBreadcrumb: (typeof import("element-plus/es"))["ElBreadcrumb"];
     ElBreadcrumbItem: (typeof import("element-plus/es"))["ElBreadcrumbItem"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
+    ElDivider: (typeof import("element-plus/es"))["ElDivider"];
+    ElDropdown: (typeof import("element-plus/es"))["ElDropdown"];
+    ElDropdownItem: (typeof import("element-plus/es"))["ElDropdownItem"];
+    ElDropdownMenu: (typeof import("element-plus/es"))["ElDropdownMenu"];
     ElForm: (typeof import("element-plus/es"))["ElForm"];
     ElFormItem: (typeof import("element-plus/es"))["ElFormItem"];
     ElIcon: (typeof import("element-plus/es"))["ElIcon"];
@@ -18,9 +22,15 @@ declare module "vue" {
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElMenuItemGroup: (typeof import("element-plus/es"))["ElMenuItemGroup"];
+    ElOption: (typeof import("element-plus/es"))["ElOption"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
+    ElSelect: (typeof import("element-plus/es"))["ElSelect"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     Hamburger: (typeof import("./../components/Hamburger/index.vue"))["default"];
+    IEpAddLocation: (typeof import("~icons/ep/add-location"))["default"];
+    IEpCaretBottom: (typeof import("~icons/ep/caret-bottom"))["default"];
+    IEpRight: (typeof import("~icons/ep/right"))["default"];
+    IEpUser: (typeof import("~icons/ep/user"))["default"];
     Item: (typeof import("./../layout/components/Sidebar/Item.vue"))["default"];
     Link: (typeof import("./../layout/components/Sidebar/Link.vue"))["default"];
     Navbar: (typeof import("./../layout/components/Navbar/index.vue"))["default"];

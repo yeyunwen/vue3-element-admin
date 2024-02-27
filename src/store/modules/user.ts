@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { store } from "@/store";
-import { resetRouter } from "@/router";
 import { loginApi, getUserInfo } from "@/api/user";
 import { useStorage } from "@vueuse/core";
 
@@ -41,7 +40,13 @@ export const useUserStore = defineStore("user", () => {
   function resetToken() {
     return new Promise<void>((reslove) => {
       token.value = "";
-      resetRouter();
+      reslove();
+    });
+  }
+
+  function logout() {
+    return new Promise<void>(async (reslove) => {
+      await resetToken();
       reslove();
     });
   }
@@ -52,6 +57,7 @@ export const useUserStore = defineStore("user", () => {
     login,
     getInfo,
     resetToken,
+    logout,
   };
 });
 

@@ -22,7 +22,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     plugins: [
       vue(),
       AutoImport({
-        imports: ["vue", "vue-router"],
+        imports: ["vue", "vue-router", "@vueuse/core"],
         // 第三方组件库的解析器
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
@@ -47,8 +47,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           }),
         ],
         dirs: ["src/components", "src/**/components"],
-        dts: false,
-        // dts: "src/types/components.d.ts",
+        // dts: false,
+        dts: "src/types/components.d.ts",
       }),
       Icons({
         autoInstall: true,

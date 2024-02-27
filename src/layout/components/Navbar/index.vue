@@ -15,13 +15,13 @@ const toggleSideBar = () => {
 <template>
   <div class="navbar">
     <!-- 左侧面包屑 -->
-    <div class="flex">
+    <div class="navbar-item">
       <hamburger :isActive="appStore.sidebar.opened" @toggle-click="toggleSideBar" />
       <breadcrumb />
     </div>
 
     <!-- 右侧导航设置 -->
-    <div class="flex">
+    <div class="navbar-item">
       <NavRight />
     </div>
   </div>
@@ -32,11 +32,14 @@ const toggleSideBar = () => {
   align-items: center;
   justify-content: space-between;
   height: 50px;
+  padding: 0 10px;
   background-color: #fff;
   box-shadow: 0 0 1px #0003;
-}
 
-.flex {
-  display: flex;
+  .navbar-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 }
 </style>
