@@ -2,6 +2,10 @@
 import { RouteLocationMatched, RouteLocationRaw } from "vue-router";
 import { compile } from "path-to-regexp";
 
+defineOptions({
+  name: "Breadcrumb",
+});
+
 const router = useRouter();
 const route = useRoute();
 
