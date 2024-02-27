@@ -83,6 +83,32 @@ const constantRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: "/routePage",
+    redirect: "/routePage/index",
+    component: Layout,
+    meta: {
+      title: "路由示例",
+    },
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/routePage/index.vue"),
+        meta: {
+          title: "路由示例",
+        },
+        children: [
+          {
+            path: ":id",
+            component: () => import("@/views/routePage/detail.vue"),
+            meta: {
+              title: "路由详情",
+            },
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const asyncRoutes: RouteRecordRaw[] = [

@@ -22,15 +22,15 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     plugins: [
       vue(),
       AutoImport({
-        imports: ["vue"],
+        imports: ["vue", "vue-router"],
         // 第三方组件库的解析器
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
           ElementPlusResolver(),
           IconsResolver({}),
         ],
-        dts: false,
-        // dts: "src/types/auto-imports.d.ts",
+        // dts: false,
+        dts: "src/types/auto-imports.d.ts",
         eslintrc: {
           enabled: false,
           filepath: "./.eslintrc-auto-import.json",
