@@ -20,6 +20,10 @@ declare module "vue-router" {
      */
     hidden?: boolean;
     /**
+     * 是否固定
+     */
+    affix?: boolean;
+    /**
      * 图标
      */
     icon?: string;

@@ -39,6 +39,7 @@ const constantRoutes: RouteRecordRaw[] = [
         meta: {
           title: "dashboard",
           icon: "homepage",
+          affix: true,
         },
       },
     ],
@@ -53,6 +54,7 @@ const constantRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/guide/index.vue"),
         meta: {
           title: "guide",
+          affix: true,
         },
       },
     ],

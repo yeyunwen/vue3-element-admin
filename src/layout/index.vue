@@ -22,6 +22,7 @@ const classObj = computed(() => {
     <div class="main-container">
       <div>
         <Navbar />
+        <TagsView />
       </div>
       <router-view />
     </div>
