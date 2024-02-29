@@ -2,7 +2,7 @@
 import { useTagsViewStore } from "@/store/modules/tagsView";
 import { useUserStore } from "@/store/modules/user";
 
-const useStore = useUserStore();
+const userStore = useUserStore();
 const tagsViewStore = useTagsViewStore();
 const router = useRouter();
 const route = useRoute();
@@ -14,7 +14,7 @@ const handleLogout = () => {
     cancelButtonText: "取消",
     type: "warning",
   }).then(() => {
-    useStore.logout().then(() => {
+    userStore.logout().then(() => {
       tagsViewStore.delAllTag();
       router.push(`/login?redirect=${route.fullPath}`);
     });
