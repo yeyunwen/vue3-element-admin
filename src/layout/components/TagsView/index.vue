@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 import { useTagsViewStore } from "@/store/modules/tagsView";
-import { usePermissionStore } from "@/store/modules/permission";
-import { type RouteRecordRaw } from "vue-router";
-import { resolve } from "path-browserify";
 
 defineOptions({
   name: "TagsView",
@@ -11,7 +8,6 @@ defineOptions({
 const route = useRoute();
 const router = useRouter();
 const tagsViewStore = useTagsViewStore();
-const permission = usePermissionStore();
 
 const visitedViews = computed(() => tagsViewStore.visitedViews);
 
@@ -43,41 +39,6 @@ const toLastView = (visitedViews: TagView[]) => {
   const lastView = visitedViews.at(-1);
   router.push(lastView!.fullPath);
 };
-
-const filterAffixTags = (routes: RouteRecordRaw[], basePath: string = "/") => {
-  const affixTags: TagView[] = [];
-  routes.forEach((route) => {
-    if (route.meta?.affix) {
-      const tagPath = resolve(basePath, route.path);
-      affixTags.push({
-        fullPath: tagPath,
-        path: tagPath,
-        name: (route.name as string) || "",
-        title: route.meta.title || "",
-        affix: route.meta.affix,
-      });
-    }
-    if (route.children) {
-      const tempTags = filterAffixTags(route.children, route.path);
-      if (tempTags.length >= 1) {
-        affixTags.push(...tempTags);
-      }
-    }
-  });
-  return affixTags;
-};
-
-const initTags = () => {
-  const affixTags = filterAffixTags(permission.routes);
-
-  for (const tag of affixTags) {
-    tagsViewStore.addTag(tag);
-  }
-};
-
-onMounted(() => {
-  initTags();
-});
 
 watch(
   route,

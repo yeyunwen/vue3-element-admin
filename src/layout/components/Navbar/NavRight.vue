@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import { useTagsViewStore } from "@/store/modules/tagsView";
 import { useUserStore } from "@/store/modules/user";
 
 const useStore = useUserStore();
+const tagsViewStore = useTagsViewStore();
 const router = useRouter();
 const route = useRoute();
 
@@ -13,6 +15,7 @@ const handleLogout = () => {
     type: "warning",
   }).then(() => {
     useStore.logout().then(() => {
+      tagsViewStore.delAllTag();
       router.push(`/login?redirect=${route.fullPath}`);
     });
   });
