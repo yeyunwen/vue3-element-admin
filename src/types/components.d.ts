@@ -36,13 +36,13 @@ declare module "vue" {
     IEpRight: (typeof import("~icons/ep/right"))["default"];
     IEpUser: (typeof import("~icons/ep/user"))["default"];
     Item: (typeof import("./../layout/components/Sidebar/Item.vue"))["default"];
-    Link: (typeof import("./../layout/components/Sidebar/Link.vue"))["default"];
+    Link: (typeof import("./../layout/components/Sidebar/components/Link.vue"))["default"];
     Navbar: (typeof import("./../layout/components/Navbar/index.vue"))["default"];
-    NavRight: (typeof import("./../layout/components/Navbar/NavRight.vue"))["default"];
+    NavRight: (typeof import("./../layout/components/Navbar/components/NavRight.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
     Sidebar: (typeof import("./../layout/components/Sidebar/index.vue"))["default"];
-    SidebarItem: (typeof import("./../layout/components/Sidebar/SidebarItem.vue"))["default"];
+    SidebarItem: (typeof import("./../layout/components/Sidebar/components/SidebarItem.vue"))["default"];
     SvgIcon: (typeof import("./../components/SvgIcon/index.vue"))["default"];
     TagsView: (typeof import("./../layout/components/TagsView/index.vue"))["default"];
   }

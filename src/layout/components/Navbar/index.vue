@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import NavRight from "./NavRight.vue";
 import { useAppStore } from "@/store/modules/app";
 
 defineOptions({

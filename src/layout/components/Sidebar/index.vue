@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import SidebarItem from "./SidebarItem.vue";
 import { useRoute } from "vue-router";
 import { usePermissionStore } from "@/store/modules/permission";
 import { useAppStore } from "@/store/modules/app";
