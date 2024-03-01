@@ -68,6 +68,8 @@ watch(
 
 <style lang="scss" scoped>
 .tags-view {
+  box-sizing: border-box;
+  height: 34px;
   padding: 4px 10px;
 
   .scrollbar-container {

@@ -24,6 +24,10 @@ declare module "vue-router" {
      */
     affix?: boolean;
     /**
+     * 是否缓存
+     */
+    keepAlive?: boolean;
+    /**
      * 图标
      */
     icon?: string;

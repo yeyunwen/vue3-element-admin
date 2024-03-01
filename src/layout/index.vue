@@ -1,5 +1,4 @@
 <script setup>
-import { Sidebar } from "./components/index";
 import { useAppStore } from "@/store/modules/app";
 
 defineOptions({
@@ -20,11 +19,11 @@ const classObj = computed(() => {
   <div class="app-wrapper" :class="classObj">
     <Sidebar class="sidebar-container" />
     <div class="main-container">
-      <div>
+      <header>
         <Navbar />
         <TagsView />
-      </div>
-      <router-view />
+      </header>
+      <AppMain class="app-main" />
     </div>
   </div>
 </template>

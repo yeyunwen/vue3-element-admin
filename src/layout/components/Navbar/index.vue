@@ -27,11 +27,14 @@ const toggleSideBar = () => {
   </div>
 </template>
 <style lang="scss">
+@use "@/styles/variables" as *;
+
 .navbar {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: $navbarHeight;
   padding: 0 10px;
   background-color: #fff;
   box-shadow: 0 0 1px #0003;
