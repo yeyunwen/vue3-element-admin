@@ -86,6 +86,23 @@ const constantRoutes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: "/components",
+    redirect: "/components/ProTable",
+    component: Layout,
+    meta: {
+      title: "组件示例",
+    },
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/components/ProTable/index.vue"),
+        meta: {
+          title: "ProTable",
+        },
+      },
+    ],
+  },
+  {
     path: "/routePage",
     redirect: "/routePage/index",
     component: Layout,

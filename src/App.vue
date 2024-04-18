@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+</script>
 <script>
 export default {
   name: "App",
@@ -6,7 +8,9 @@ export default {
 </script>
 
 <template>
-  <router-view />
+  <ElConfigProvider :locale="zhCn">
+    <router-view />
+  </ElConfigProvider>
 </template>
 
 <!-- <style scoped></style> -->
