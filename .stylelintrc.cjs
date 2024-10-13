@@ -31,5 +31,6 @@ module.exports = {
     "no-duplicate-selectors": null, // 允许无降序特异性
     "no-descending-specificity": null,
     "property-no-unknown": [true, { ignoreProperties: ["menuBg", "menuText", "menuActiveText"] }],
+    "no-empty-source": null,
   },
 };

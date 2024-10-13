@@ -128,6 +128,30 @@ const constantRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: "/questionnaire",
+    redirect: "/questionnaire/index",
+    component: Layout,
+    meta: {
+      title: "问卷调查",
+    },
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/questionnaire/index.vue"),
+        meta: {
+          title: "问卷调查",
+        },
+      },
+      {
+        path: "new",
+        component: () => import("@/views/questionnaire/new.vue"),
+        meta: {
+          title: "新增问卷",
+        },
+      },
+    ],
+  },
 ];
 
 const asyncRoutes: RouteRecordRaw[] = [
