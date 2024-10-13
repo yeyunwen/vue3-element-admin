@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
-
+import VueDevtools from "vite-plugin-vue-devtools";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -21,6 +21,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
   return {
     plugins: [
       vue(),
+      VueDevtools(),
       AutoImport({
         imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
         // 第三方组件库的解析器
